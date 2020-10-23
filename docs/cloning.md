@@ -8,9 +8,9 @@
   "permalink": true
 ---
 
-# Cloning Templates
+# Clonages de templates
 
-## Prerequisites
+## Pré-requis
 
 Il est supposé que vous avez
 * un compte GitHub enregistré.

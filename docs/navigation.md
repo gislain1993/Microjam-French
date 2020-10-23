@@ -16,8 +16,8 @@
     - [3.3 Le flux de travail final]({base}/installationGuide.html#33-le-flux-de-travail-final)
   - [References]({base}/installationGuide.html#references)
 
-- [Cloning Templates]({base}/cloning.html#cloning-templates)
-  - [Prerequisites]({base}/cloning.html#prerequisites)
+- [Clonage de templates]({base}/cloning.html#cloning-templates)
+  - [Pré-requis]({base}/cloning.html#prerequisites)
   - [Clonage d'un modèle]({base}/cloning.html#clonage-dun-modc3a8le)
 
 - [FAQ]({base}/faq.html#faq)
