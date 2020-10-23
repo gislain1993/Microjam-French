@@ -283,16 +283,16 @@ Juste pour mentionner & ndash; cette documentation a été rédigée par **&mu;J
 
 | Entry |  Type  | Comment |
 |:------|:--------|:-----|:----|
-| `author` | string | Author name(s) used by search engines. |
-| `date` | string | Creation date `yyyy-mm-dd` as in `2020-12-31`. |
-| `description` | string | Page description used by search engines. |
-| `lang` | string | Used by browser for hyphenation. Default value is `"en"`. |
-| `layout` | enum | μJam knows the following layout types:<br> `["page","article","index","none"]`<br>Other custom layout types are supported<br> and treated like `page` layouts internally. |
-| `math` | boolean | Support of LaTeX math formulas using `$` delimiters. |
-| `permalink` | string \| `true` |  Place character symbol as a link anchor behind headings.<br>Default character symbol is `"#"`. |
-| `tags` | array of strings | Used as keywords for search engines.<br>Example `["web,"page","physics","svg"]` |
-| `title` | string | Page title shown in browser's title bar. |
-| `uses` | array of objects | Inject external resources into page.<br>Example `"uses":[ { "uri": "navigation.md" } ]` |
+| `auteur` | string | Nom(s) de l'auteur utilisé(s) par les moteurs de recherche. |
+| `date` | string | Creation d'une date `yyyy-mm-dd` comme `2020-12-31`. |
+| `description` | string | Description de la page utilisée par les moteurs de recherche. |
+| `longueur` | string | utilisé par le navigateur pour la césure. La valeur par défaut est `"en"`. |
+| `layout` | enum | μJam connaît les types de mise en page suivants:<br> `["page","article","index","none"]`<br>D'autres types de mise en page personnalisés sont pris en charge<br> et traitées comme des "mises en page" en interne. |
+| `math` | boolean | Prise en charge des formules mathématiques LaTeX utilisant les délimiteurs "$". |
+| `permalink` | string \| `true` |  Placez le symbole de caractère comme ancre de lien derrière les titres.<br>Le symbole de caractère par défaut est `"#"`. |
+| `tags` | tableau de chaînes de caractères | utilisées comme mots-clés pour les moteurs de recherche.<br>Exemple `["web,"page","physics","svg"]` |
+| `titre` | string | Titre de la page affiché dans la barre de titre du navigateur. |
+| `uses` | array of objects | Injecter des ressources externes dans la page.<br>Exemple `"uses":[ { "uri": "navigation.md" } ]` |
 
 ## Commandes clavier 
 
