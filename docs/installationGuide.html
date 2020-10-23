@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="${data.lang||'en'}" class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+<meta name="description" content="Creating Web Pages with `&mu;jam`">
+<meta name="date" content="Mon Mar 30 2020 02:00:00 GMT+0200 (Central European Summer Time)">
+<meta name="keywords" content="2D Vector,Graphics,Web,SVG,HTML Canvas,Path Segment">
+<base href="undefined">
+<title>Creating and Authoring Web Pages with μjam</title>
+<link rel="shortcut icon" type="image/png" href="./img/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/vs2015.min.css">
+
+<link rel="stylesheet" href="./theme/styles.css">
+</head>
+<body id="top">
+<header>
+  <a class="left" href="./index.html"><img src="./img/icon128.png"></a>
+  <h1 class="center">&mu;Jam &ndash; Documentation</h1>
+  <a class="right" href="https://github.com/goessner/microjam"><img src="img/GitHub-Mark-Light-32px.png"></a>
+</header>
+<main>
+  <nav>
+     <h2 style="margin: 0.5em"><a href="#top">Documentation</a></h2>
+     <ul>
+<li>
+<p><a href="./index.html#introduction">Introduction</a></p>
+<ul>
+<li><a href="./index.html#quest-ce-que-cest">Qu'est-ce-que c'est ?</a></li>
+<li><a href="./index.html#que-puis-je-faire-avec-cela">Que puis-je faire avec cela ?</a></li>
+<li><a href="./index.html#je-ne-suis-pas-un-programmeur">Je ne suis pas un programmeur</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./installationGuide.html#installation">Installation</a></p>
+<ul>
+<li><a href="./installationGuide.html#crc3a9ation-de-pages-web-sans-serveur">Création de pages web sans serveur</a></li>
+<li><a href="./installationGuide.html#1-un-nouveau-projet">1. Un Nouveau Projet</a></li>
+<li><a href="./installationGuide.html#2-gc3a9nc3a9ration-de-contenu">2. Génération de contenu</a>
+<ul>
+<li><a href="./installationGuide.html#21-page-documents">2.1 <code>page</code> Documents</a></li>
+<li><a href="./installationGuide.html#22-documents-article">2.2 Documents <code>article</code></a></li>
+<li><a href="./installationGuide.html#23-index-document">2.3 <code>index</code> Document</a></li>
+</ul>
+</li>
+<li><a href="./installationGuide.html#3-publiez-dans-le-monde">3. Publiez dans le monde</a>
+<ul>
+<li><a href="./installationGuide.html#31-crc3a9ation-dun-dc3a9pot-local-git">3.1 Création d'un dépot local git</a></li>
+<li><a href="./installationGuide.html#32-dc3a9pc3b4t-repository-en-ligne">3.2 Dépôt (Repository) en ligne</a></li>
+<li><a href="./installationGuide.html#33-le-flux-de-travail-final">3.3 Le flux de travail final</a></li>
+</ul>
+</li>
+<li><a href="./installationGuide.html#references">References</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./cloning.html#cloning-templates">Cloning Templates</a></p>
+<ul>
+<li><a href="./cloning.html#prerequisites">Prerequisites</a></li>
+<li><a href="./cloning.html#clonage-dun-modc3a8le">Clonage d'un modèle</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./faq.html#faq">FAQ</a></p>
+<ul>
+<li><a href="./faq.html#pages">Pages</a></li>
+<li><a href="./faq.html#styles">Styles</a></li>
+<li><a href="./faq.html#templates">Templates</a></li>
+<li><a href="./faq.html#deployment">Deployment</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav>
+  <article>
+<h1 id="installation">Installation</h1>
+<h2 id="cr%C3%A9ation-de-pages-web-sans-serveur">Création de pages web sans serveur</h2>
+<p>Ceci est un guide d'installation pour <strong>μjam</strong>, une extension à <a href="https://code.visualstudio.com/"><em>Visual Studio Code</em></a>. VS Code est un éditeur open source puissant et très utilisé de Microsoft disponible sur les plates-formes Linux, Mac et Windows. La caractéristique la plus importante dans ce contexte de création et de création de sites Web est <em>VS Code étant un éditeur de Markdown très sophistiqué</em>.</p>
+<p>Donc, en utilisant ce guide d'installation, nous n'avons besoin que de quelques prérequis.</p>
+<ul>
+<li>VS Code installé. Vous pouvez le télécharger <a href="https://code.visualstudio.com/download">ici</a>.</li>
+<li>Installe <strong>μjam</strong> <a href="https://marketplace.visualstudio.com/items?itemName=goessner.microjam">ici</a></li>
+<li>les connaissances minimales de markdown. Ici un aperçu de la <a href="https://www.markdownguide.org/basic-syntax/">syntax de base</a>.</li>
+</ul>
+<p>Vous aimerez peut-être entendre ça ...</p>
+<ul>
+<li>aucune compétence en programmation n'est requise.</li>
+<li>l'initialisation et la création de sites Web peuvent être effectuées complètement à l'intérieur de VS Code.</li>
+<li>les personnes intéressées mais impatientes peuvent ignorer toutes les sections <em>Informations</em> et <em>Explication</em> ci-dessous.</li>
+</ul>
+<p>Nous le ferons en trois étapes simples:</p>
+<ol>
+<li><a href="#1-a-new-project-1">Un nouveau Projet</a></li>
+<li><a href="#2-generating-content-1">Generation du Contenu</a></li>
+<li><a href="#3-publish-to-the-world-1">Publier dans le monde</a></li>
+</ol>
+<h2 id="1-un-nouveau-projet">1. Un Nouveau Projet</h2>
+<p>Pour un nouveau projet, nous avons besoin d'un dossier de projet dans lequel tout ce qui est nécessaire peut résider. Pour créer ce nouveau dossier</p>
+<ol>
+<li>Ouvrez une nouvelle session de terminal directement dans l'éditeur <code>vscode</code>.</li>
+</ol>
+<figure>
+  <img src="img/mu-jam.01.png">
+  <figcaption>Fig. 1: Commencez avec un éditeur vide et ouvrez une nouvelle session de terminal.</figcaption>
+</figure>
+<ol start="2">
+<li>Tapez dans la fenêtre du terminal la commande <code>mkdir</code> (<code>make directory</code>) and ...<br>
+specify with it the path to our new project folder <code>first</code>.</li>
+</ol>
+<pre><code><code><div>&gt; mkdir &lt;new folder path&gt;
+</div></code></code></pre>
+<blockquote>
+<p><strong>Important</strong>!
+Pour des raisons de simplicité, le répertoire racine <code>/</code> est pris ici comme emplacement du dossier du projet. Ceci doit être évité en général et est même limité sous Unix / OSX. Prenez votre répertoire <code>/ home</code> à la place (<code>&gt; cd ~ </code>).</p>
+</blockquote>
+<figure>
+  <img src="./img/mu-jam.02.png" alt="md = make directory">
+  <figcaption>Fig. 2: Créer un dossier de projet.</figcaption>
+</figure>
+<ol start="3">
+<li>Nous navigons vers notre dossier nouvellement crée via <code>cd</code> (<code>change directory</code>).</li>
+</ol>
+<pre><code><code><div>&gt; cd &lt;new folder path&gt;
+</div></code></code></pre>
+<figure>
+  <img src="./img/mu-jam.03.png">
+  <figcaption>Fig. 3: Accédez au dossier du projet.</figcaption>
+</figure>
+<p>Nous voulons créer le premier fichier dans notre répertoire presque vide <code>first</code>.</p>
+<ol start="4">
+<li>Sélectionnez dans le menu <code>Fichier &gt; Nouveau fichier</code> (<kbd> Ctrl </kbd> + <kbd> N </kbd>).</li>
+<li>Copiez et collez le texte suivant dans sa fenêtre (<kbd> Ctrl </kbd> + <kbd> C </kbd>, <kbd> Ctrl </kbd> + <kbd> V </kbd>).</li>
+</ol>
+<pre><code class="code-line language-json"><div>{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"first"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"My first web page using microjam"</span>,
+  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0.1.0"</span>,
+  <span class="hljs-attr">"author"</span>: <span class="hljs-string">"it's me"</span>,
+  <span class="hljs-attr">"microjam"</span>: {}
+}
+</div></code></pre>
+<ol start="6">
+<li>Enregistrez le fichier via <code>File &gt; Save As ...</code> (<kbd> Ctrl </kbd> + <kbd> Shift </kbd> + <kbd> S </kbd>) en lui donnant le nom de package. json<code>. Enregistrez-le dans le nouveau répertoire du projet </code>first`.</li>
+</ol>
+<figure>
+  <img src="./img/mu-jam.04.png">
+  <figcaption>Fig. 4: Créez le fichier 'package.json'.</figcaption>
+</figure>
+<p>Avec cela, nous avons terminé notre première étape de création d'un nouveau projet et continuerons à générer du contenu.</p>
+<h2 id="2-g%C3%A9n%C3%A9ration-de-contenu">2. Génération de contenu</h2>
+<p>Nous commençons maintenant à écrire des documents Markdown en utilisant <code>vscode</code> comme éditeur de markdown.</p>
+<blockquote>
+<p><strong>Informations</strong>
+<strong>μjam</strong> différencie essentiellement trois types de documents:</p>
+<ul>
+<li><code>page</code> représente une page Web autonome comme une page<code> about</code>.</li>
+<li>Les <code>articles</code> sont des pages Web construisant une liste consécutive d'entrées comme <em>les articles de blog</em>.</li>
+<li><code>index</code> représente la page principale, contenant potentiellement une table des matières de toutes les pages<code> article</code>.</li>
+</ul>
+<p>Une certaine disposition est attribuée à chacun de ces trois types.</p>
+</blockquote>
+<p>En ce moment, nous avons une petite structure de répertoires:</p>
+<pre><code><code><div>/first
+|_ package.json
+|_ /docs   (empty folder)
+</div></code></code></pre>
+<h3 id="21-page-documents">2.1 <code>page</code> Documents</h3>
+<p>Créons une page à propos de notre premier site Web.</p>
+<ol>
+<li>Copiez et collez le texte suivant dans une nouvelle fenêtre de démarque (<kbd>Ctrl</kbd> + <kbd>C</kbd>, <kbd>Ctrl</kbd> + <kbd>V</kbd>)</li>
+</ol>
+<pre><code><code><div>---
+&quot;layout&quot;: &quot;page&quot;,
+&quot;title&quot;: &quot;About&quot;
+---
+</div></code></code></pre>
+<p><strong>À propos de ce site</strong></p>
+<p>Ce site a été créé comme une simple collection de fichiers markdown utilisant un <em>Static Site Generator</em> <strong>μjam</strong> minimaliste.</p>
+<ol start="2">
+<li>
+<p>Enregistrez-le dans le fichier <code>about.md</code> dans le nouveau répertoire<code> docs</code> (<kbd> Ctrl </kbd> + <kbd> Maj </kbd> + <kbd> S </kbd>).</p>
+</li>
+<li>
+<p>Affichez la fenêtre d'aperçu en appuyant sur le bouton d'aperçu * entouré de rouge * (<kbd> Ctrl </kbd> + <kbd> K </kbd> <kbd> V </kbd>).</p>
+</li>
+</ol>
+<figure>
+  <img src="./img/mu-jam.05.png">
+  <figcaption>Fig. 5: Rédaction du document de la page «à propos».</figcaption>
+</figure>
+<blockquote>
+<p><strong>Explication</strong>
+Lorsque vous travaillez sur un fichier markdown, vous pouvez toujours examiner le résultat html côte à côte dans une fenêtre d'aperçu (Fig. 5). Veuillez noter quelques * métadonnées préliminaires * en haut de notre fichier <code>about.md</code>. Ces métadonnées sont placées entre deux lignes de trois tirets «---» et ainsi séparées du texte de démarque suivant. Ce style de séparation est tiré de <code>yaml</code>, mais les métadonnées elles-mêmes doivent suivre strictement la syntaxe<code> json</code>.</p>
+</blockquote>
+<p>Nous voulons maintenant ouvrir notre dossier de projet complet dans <code>vscode</code>.</p>
+<blockquote>
+<p><strong>Explication</strong>
+Après avoir enregistré avec succès <code>about.md</code> dans le dossier<code> docs</code> &amp; ndash; qui est notre * premier * fichier de contenu dans ce projet &amp; ndash; nous aurions peut-être réalisé que la structure des répertoires du projet a considérablement changé &amp; ndash; magiquement. Nous voulons le prouver par la confortable vue Explorer de <code>vscode</code>.</p>
+</blockquote>
+<ol start="4">
+<li>
+<p>Activez la vue Explorateur en appuyant sur le symbole le plus haut de la <a href="https://code.visualstudio.com/docs/getstarted/userinterface#_basic-layout"><em>Barre d'activité</em></a>, situé à l'extrême gauche de l'éditeur.</p>
+</li>
+<li>
+<p>La vue de l'explorateur s'ouvre et nous demande <code>'Ouvrir le dossier '</code>. En appuyant sur ce bouton et en sélectionnant notre répertoire <code>/ first</code>, nous obtenons une belle vue de notre structure de dossiers (Fig. 6). En même temps, la couleur de la barre d'état est passée de <em>violet</em> à <em>bleu</em>.</p>
+</li>
+</ol>
+<figure>
+  <div><img src="./img/mu-jam.06-1.png">&nbsp;&nbsp;<img src="./img/mu-jam.06-2.png"></div>
+  <figcaption>Fig. 6: Structure de dossier de projet étendue après l'enregistrement du premier fichier markdown.</figcaption>
+</figure>
+<blockquote>
+<p><strong>Explication</strong></p>
+<ul>
+<li>Dans notre dossier <code>docs</code>, deux fichiers supplémentaires sont apparus:</li>
+<li>tous les fichiers <code>html</code> générés, qui ont obtenu le nom de fichier de leurs fichiers<code> md</code> correspondants. Nous avons donc ici «about.html» uniquement.</li>
+<li><code>pages.json</code> contenant une liste de métadonnées étendues extraites de tous les fichiers markdown. À ce moment-là, il contient maintenant un tableau littéral comprenant les métadonnées d'un seul fichier <code>page</code>.</li>
+<li>Un nouveau dossier <code>theme</code> a été créé à l'intérieur de<code> docs</code>. Il contient</li>
+<li><code>template.json</code>, qui contient les modèles par défaut pour générer des fichiers<code> html</code> à partir de fichiers <code>md</code>.</li>
+<li>un seul fichier de feuille de style <code>styles.css</code> utilisé par les fichiers<code> html</code>.</li>
+</ul>
+</blockquote>
+<p>Si vous souhaitez étendre cette structure de répertoires, ajoutez des fichiers ou modifiez vos modèles &amp; ndash; peut-être voulez-vous ajouter des scripts &amp; ndash; vous pouvez le faire manuellement à tout moment à partir de maintenant. <code>μjam</code> ne touchera plus la structure de vos dossiers et vos modèles. C'était une action initiale unique seulement.</p>
+<p>Vous pouvez maintenant afficher votre première page Web dans le navigateur de votre choix.</p>
+<ol start="6">
+<li>
+<ul>
+<li>Glissez 'n drop * <code>about.html</code> de la vue Explorateur de l'éditeur (Fig. 6) dans la barre d'adresse du navigateur ... et voilà.</li>
+</ul>
+</li>
+</ol>
+<figure>
+  <img src="./img/mu-jam.07.png">
+  <figcaption>Fig. 7: À propos de la page &ndash; vu dans le navigateur.</figcaption>
+</figure>
+<h3 id="22-documents-article">2.2 Documents <code>article</code></h3>
+<p>Nous voulons maintenir une série de documents «article», éventuellement sous forme de messages à utiliser avec un blog.</p>
+<blockquote>
+<p><strong>Informations</strong>
+Les documents <code>article</code> ne sont pas tellement différents des documents<code> page</code>. Dans les * métadonnées préliminaires *, nous devons avoir un membre <code>date</code>. L'ajout d'un membre <code>description</code> est recommandé.</p>
+</blockquote>
+<p>Le workflow s'illustre désormais par la création de deux articles:</p>
+<ol>
+<li>Ouvrez un nouveau fichier via <code>Fichier&gt; Nouveau fichier</code> (<kbd> Ctrl </kbd> + <kbd> N </kbd>).</li>
+<li>Copiez et collez le texte suivant dans cette fenêtre (<kbd> Ctrl </kbd> + <kbd> C </kbd>, <kbd> Ctrl </kbd> + <kbd> V </kbd>)</li>
+<li>Enregistrez-le dans le fichier <code>one.md</code> dans le répertoire<code> docs</code> (<kbd> Ctrl </kbd> + <kbd> Maj </kbd> + <kbd> S </kbd>).</li>
+</ol>
+<p><code>one.md</code></p>
+<pre><code><code><div>---
+&quot;layout&quot;: &quot;article&quot;,
+&quot;title&quot;: &quot;Article One&quot;,
+&quot;description&quot;: &quot;This is the first article&quot;,
+&quot;date&quot;: &quot;2020-03-22&quot;
+---
+</div></code></code></pre>
+<p><em>Abstrait</em>
+Ceci est le premier article. Nous testons principalement la «coloration syntaxique» ici.</p>
+<pre><code><code><div> *1. Mise en évidence de la syntaxe*
+ *1.1 Html*
+
+```html
+&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;About&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;header&gt;header&lt;/header&gt;
+    &lt;main&gt;
+       content here
+    &lt;/main&gt;
+    &lt;footer&gt;footer&lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</div></code></code></pre>
+<ol start="4">
+<li>Ouvrez un nouveau fichier via <code>Fichier&gt; Nouveau fichier</code> (<kbd> Ctrl </kbd> + <kbd> N </kbd>).</li>
+<li>Copiez et collez le texte suivant dans cette fenêtre (<kbd> Ctrl </kbd> + <kbd> C </kbd>, <kbd> Ctrl </kbd> + <kbd> V </kbd>)</li>
+<li>Enregistrez-le dans le fichier <code>two.md</code> dans le répertoire<code> docs</code> (<kbd> Ctrl </kbd> + <kbd> Maj </kbd> + <kbd> S </kbd>).</li>
+</ol>
+<p><code>two.md</code></p>
+<pre><code><code><div>---
+&quot;layout&quot;: &quot;article&quot;,
+&quot;title&quot;: &quot;Article Two&quot;,
+&quot;description&quot;: &quot;This is the second article&quot;,
+&quot;date&quot;: &quot;2020-03-23&quot;
+---
+</div></code></code></pre>
+<p><em>Abstrait</em></p>
+<p>Ceci est le deuxième article. Ici, nous testons des formules mathématiques et des <code>svg</code> intégrés.</p>
+<p><em>1. Test</em></p>
+<p><em>1.1 Formules mathématiques</em></p>
+<p><a href="https://en.wikipedia.org/wiki/Euler%27s_identity">Identité d'Euler</a> est considérée comme l'une des plus belles formules, car elle rassemble les nombres les plus fondamentaux en mathématiques dans une équation compacte (1).</p>
+<section class="eqno"><eqn><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>π</mi></mrow></msup><mo>+</mo><mn>1</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">e^{i\pi} + 1 = 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9579939999999999em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8746639999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></span></eqn><span>(1)</span></section></math>
+<p><em>1.2 Vector Graphics</em></p>
+<figure>
+<svg width="200" height="100">
+   <path d="M100,10L123.5,82.4L61,37.6L138,37.6L76.5,82.4Z" stroke="darkslategray" stroke-width="4" fill="orange"/>
+</svg>
+  <figcaption>Fig. 1: SVG Star</figcaption>
+</figure>
+<figure>
+  <img src="./img/mu-jam.08.png">
+  <figcaption>Fig. 8: Document article 'two.md'.</figcaption>
+</figure>
+<blockquote>
+<p><strong>Explication</strong>
+Tout en ayant sauvegardé ces deux documents <code>* .md</code> pour la première fois, leurs documents<code> * .html</code> correspondants ont été créés et leurs * métadonnées de base * ont également été extraites, légèrement étendues et ajoutées à la liste des métadonnées des pages dans <code>pages.json</code>. Veuillez noter que <code>μjam</code> mettra à jour les métadonnées pendant le stockage de fichiers consécutifs et les supprimera même avec les fichiers<code> * .html</code>, lorsque vous supprimez manuellement un fichier de démarquage du système de fichiers.</p>
+<p>Vous avez peut-être aussi remarqué que nous avons mélangé le balisage LaTeX math et SVG dans notre texte markdown du fichier <code>two.md</code> (Fig. 8).</p>
+</blockquote>
+<h3 id="23-index-document">2.3 <code>index</code> Document</h3>
+<p>Créons maintenant la page d'accueil de notre site Web.</p>
+<blockquote>
+<p><strong>Informations</strong>
+Tout document markdown marqué comme «&quot; index &quot;» dans son entrée <em>mise en page avant</em> se verra ajouter une liste de tous les «articles» immédiatement après sa section «content» normale.</p>
+</blockquote>
+<ol>
+<li>Ouvrez un nouveau fichier via <code>Fichier&gt; Nouveau fichier</code> (<kbd> Ctrl </kbd> + <kbd> N </kbd>).</li>
+<li>Copiez et collez le texte suivant dans cette fenêtre (<kbd> Ctrl </kbd> + <kbd> C </kbd>, <kbd> Ctrl </kbd> + <kbd> V </kbd>)</li>
+<li>Enregistrez-le dans le fichier <code>index.md</code> du répertoire<code> src</code> (<kbd> Ctrl </kbd> + <kbd> Shift </kbd> + <kbd> S </kbd>).</li>
+</ol>
+<pre><code><code><div>---
+&quot;layout&quot;: &quot;index&quot;,
+&quot;title&quot;: &quot;My Site&quot;,
+&quot;date&quot;: &quot;2020-03-24&quot;,
+&quot;description&quot;: &quot;Homepage of microjam demo site&quot;,
+&quot;tags&quot;: [&quot;microjam&quot;,&quot;Jamstack&quot;,&quot;static page&quot;,&quot;personal&quot;,   
+         &quot;student&quot;,&quot;academics&quot;,&quot;math&quot;,&quot;vector graphics&quot;],
+&quot;category&quot;: [&quot;web&quot;,&quot;math&quot;,&quot;graphics&quot;]
+---
+</div></code></code></pre>
+<p>Ceci est un site de démonstration contenant quelques articles. Il a été réalisé par <strong>μjam</strong>, un générateur de site statique minimaliste.</p>
+<figure>
+  <img src="./img/mu-jam.09.png">
+  <figcaption>Fig. 9: Page index .</figcaption>
+</figure>
+<blockquote>
+<p><strong>Explication</strong>
+Puisque les deux documents <code>article</code> ont des sections<code> abstract</code>, ce contenu est utilisé pour la brève description des articles. Dans le cas d'une section <code>abstract</code> manquante, l'entrée<code> description</code> de * frontmatter metadata * aurait été prise à la place.</p>
+</blockquote>
+<p>Le processus de génération de contenu du site de démonstration est maintenant terminé.</p>
+<h2 id="3-publiez-dans-le-monde">3. Publiez dans le monde</h2>
+<p>Nous voulons bien utiliser ici <a href="https://www.edureka.co/blog/how-to-use-github/">GitHub</a>.
+Et nous voulons que cette <em>plateforme d'hébergement de contrôle de version</em> soit connectée à notre référentiel de projet local via <code>vscode</code>.</p>
+<blockquote>
+<p><strong>Informations</strong>
+<em>GitHub</em> en tant que plate-forme très utilisée est un service de partage de code. Mais contrairement aux simples fournisseurs de stockage en nuage, GitHub prend principalement en charge le travail de projet, où les fichiers sont régulièrement modifiés, téléchargés et doivent être gérés via le contrôle de version. C'est exactement ce que nous voulons avoir avec notre projet de site Web et le meilleur de tous: GitHub nous fournit un référentiel en ligne gratuitement. Nous avons alors simplement un espace de stockage, appelé <em>repository</em>, où notre projet réside sur le web. Ce n'est pas un serveur Web classique. Dans le sens de <em>Jam</em>, c'est un CDN – <em>réseau de diffusion de contenu</em>.</p>
+</blockquote>
+<h3 id="31-cr%C3%A9ation-dun-d%C3%A9pot-local-git">3.1 Création d'un dépot local git</h3>
+<p><a href="https://git-scm.com/">Git</a> est un puissant outil de contrôle de version, qui nous permet de créer et de gérer un <em>dépôt local</em>.</p>
+<blockquote>
+<p><strong>Information</strong>
+Avec elle, nous avons alors un <strong>outil de contrôle des versions</strong> <em>Git</em> collaborant avec la <strong>plateforme d'hébergement de contrôle des versions</strong> <em>GitHub</em>.
+Et Visual Studio Code est livré avec une <em>intégration de contrôle de source</em> et dispose surtout d'un excellent [support Git] (<a href="https://code.visualstudio.com/docs/editor/versioncontrol#_git-support">https://code.visualstudio.com/docs/editor/versioncontrol#_git-support</a>).</p>
+</blockquote>
+<blockquote>
+<p><strong>Important</strong> !
+Il y a de fortes chances que Git soit déjà installé sur votre machine locale. Saisissez <code>'&gt; git --version'</code> sur la ligne de commande de votre terminal. Vous verrez la version actuelle installée.
+Sinon, si on vous dit que &quot;git&quot; est inconnu, vous devez l'installer. Ne vous inquiétez pas, cela peut être fait facilement en visitant ce [site de téléchargement] (<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>). J'attendrai ici.</p>
+</blockquote>
+<p>Traduit avec <a href="http://www.DeepL.com/Translator">www.DeepL.com/Translator</a> (version gratuite)</p>
+<ol>
+<li>Naviguer vers le troisième symbole de la barre verticale de gauche [<em>Activity Bar</em>] (<a href="https://code.visualstudio.com/docs/getstarted/userinterface#_basic-layout">https://code.visualstudio.com/docs/getstarted/userinterface#_basic-layout</a>) ... appuyez dessus.</li>
+<li>Appuyez sur le bouton bleu nommé &quot;Initialize Repository&quot;.</li>
+<li>Tapez le message de commit &quot;Initial commit&quot;.</li>
+<li><kbd>Ctrl</kbd> + <kbd>Enter</kbd> ou ...
+<ul>
+<li>Déplacez la souris sur &quot; CHANGES &quot; en disant &quot; Stage All Changes &quot;.</li>
+<li>Appuyez sur le signe &quot; + &quot;.</li>
+<li>Appuyez sur le <em>coche</em>.</li>
+</ul>
+</li>
+</ol>
+<figure>
+  <span><img src="./img/mu-jam.10-1.png">&nbsp;&nbsp;<img src="./img/mu-jam.10-2.png">&nbsp;&nbsp;<img src="./img/mu-jam.10-3.png"></span>
+  <figcaption>Fig. 10: Initialiser le dépôt git local</figcaption>
+</figure>
+<blockquote>
+<p><strong>Explication</strong>
+En initialisant notre dépôt local, nous avons ajouté un répertoire caché nommé &quot;git&quot; à notre dossier de projet. Heureusement, nous n'avons pas à nous en soucier du tout.</p>
+<ul>
+<li>Dans la vue de contrôle des sources avec l'étape 3, nous voyons nos 12 fichiers étiquetés &quot;U&quot;, qui signifie <em>untracked file</em>.</li>
+<li>Après &quot;Stage All Changes&quot; à l'étape 4, tous les fichiers ont été étiquetés &quot;A&quot;, ce qui signifie <em>ajouté</em> au dépôt.</li>
+<li>Après l'étape 5, tous les fichiers ont disparu de la vue de git, ce qui signifie que git a pris le contrôle complet de leur version à partir de maintenant. Aucune modification des fichiers n'est visible.</li>
+</ul>
+<p>Pour en savoir plus, je vous recommande de lire <a href="#1">1</a> [4] et [5].</p>
+</blockquote>
+<p>Traduit avec <a href="http://www.DeepL.com/Translator">www.DeepL.com/Translator</a> (version gratuite)</p>
+<p>L'utilité de git pour nous est évidente, lorsque nous modifions le contenu de ... dites &quot;<a href="http://one.md">one.md</a>&quot; et enregistrez le fichier (<kbd>Ctrl</kbd> + <kbd>S</kbd>).</p>
+<figure>
+  <img src="./img/mu-jam.11.png">
+  <figcaption>Fig. 11: Index page.</figcaption>
+</figure>
+<blockquote>
+<p><strong>Explication</strong>
+La vue de git montre quatre fichiers étiquetés &quot;M&quot;, ce qui signifie <em>modifié</em>.</p>
+<ol>
+<li>Nous avons modifié <code>one.md</code> manuellement.</li>
+<li>Lors de la sauvegarde, <code>one.html</code> a été nouvellement créé/écrit.</li>
+<li>le fichier <code>pages.json</code> a été modifié automatiquement.</li>
+<li>Puisque <code>one.md</code> est un fichier <code>article</code>, la liste d'articles de <code>index.html</code> est potentiellement affectée et le fichier <code>index.html</code> a été mis à jour.</li>
+</ol>
+<p>Les étapes 1 à 3 sont toujours effectuées sous le capot par <strong>μjam</strong> sur le stockage des fichiers markdown.</p>
+</blockquote>
+<p>Nous pouvons à nouveau valider directement ces modifications maintenant ou le faire plus tard, tout en continuant à travailler sur d'autres fichiers sources markdown.</p>
+<h3 id="32-d%C3%A9p%C3%B4t-repository-en-ligne">3.2 Dépôt (Repository) en ligne</h3>
+<p>Vous voulez voir vos pages en ligne maintenant ? Vous avez donc besoin d'un compte GitHub <em>utilisateur personnel</em> pour pouvoir continuer.</p>
+<blockquote>
+<p><strong>Important!</strong>
+Si vous n'avez pas de compte GitHub personnel, vous devez [créer un nouveau compte GitHub gratuit ici] (<a href="https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account">https://help.github.com/en/github/getting-started-with-github/signing-up-for-a-new-github-account</a>) .
+Veuillez également noter qu'il vous est demandé de fournir une adresse électronique valide pendant la procédure de vérification.</p>
+</blockquote>
+<p>Maintenant que vous êtes le propriétaire <code>&lt;nom d'utilisateur&gt;</code> d'un compte GitHub ...</p>
+<ol>
+<li>Naviguez sur votre navigateur personnel à l'adresse suivante : <a href="https://github.com/">https://github.com/</a>&lt;nom d'utilisateur&gt;`.</li>
+<li>Dans le coin supérieur droit de cette page GitHub, utilisez le menu déroulant &quot;+&quot;, et sélectionnez &quot;Nouveau dépôt&quot;.</li>
+</ol>
+<figure>
+  <img src="./img/mu-jam.12.png">
+  <figcaption>Fig. 12: Homepage of your GitHub account.</figcaption>
+</figure>
+<ol start="3">
+<li>Remplissez le formulaire ...
+<ul>
+<li>Prenez un nom court et mémorable comme &quot; premier &quot;.</li>
+<li>Description : &quot;Premier site web alimenté par microjam&quot; ou un texte similaire.</li>
+<li>Choisissez <em>public</em> ou <em>privé</em>.</li>
+<li>Laissez le reste tel quel.</li>
+<li>Appuyez sur le bouton <em>Create repositiory</em>.</li>
+</ul>
+</li>
+</ol>
+<figure>
+  <img src="./img/mu-jam.13.png">
+  <figcaption>Fig. 13: Formular: Creer un nouveau dépot.</figcaption>
+</figure>
+<ol start="3">
+<li>Dans un nouvel onglet/fenêtre du navigateur, naviguez jusqu'à <code>https://api.github.com/users/&lt;nom d'utilisateur&gt;</code> .</li>
+<li>Copiez votre <code>&lt;github user id&gt;</code> à partir de la deuxième ligne (une série de 6 chiffres décimaux ou plus) (<kbd>Ctrl</kbd> + <kbd>C</kbd>) [3].</li>
+<li>Dans la fenêtre du terminal (sur la ligne de commande), tapez :</li>
+</ol>
+<pre><code><code><div>&gt; git config --global user.name &lt;github user id&gt;
+&gt; git remote add origin https://github.com/&lt;username&gt;/&lt;repository name&gt;.git
+&gt; git push -u origin master
+</div></code></code></pre>
+<blockquote>
+<p><strong>Explication</strong>
+Veuillez noter que l'utilisation de ces commandes de terminal est nécessaire pour le premier transfert de fichiers vers GitHub uniquement. Ainsi, après avoir fait cela une fois, vous pouvez l'oublier pour toujours.</p>
+</blockquote>
+<p>Le résultat de cette action sur votre page de compte GitHub sera quelque chose comme ceci ... (rafraîchissez la page !)</p>
+<figure>
+  <img src="./img/mu-jam.14.png">
+  <figcaption>Fig. 14: Successfully pushed our repository to GitHub.</figcaption>
+</figure>
+<p>Nous nous occuperons de la <em>README</em> dans une minute. Nous sommes impatients de voir notre site web en ligne.</p>
+<ol start="6">
+<li>Sélectionnez &quot;Paramètres&quot; sur la page de votre compte GitHub.</li>
+<li>Faites défiler vers le bas jusqu'à &quot;GitHub Pages&quot;.</li>
+<li>Dans &quot;Select source&quot;, cochez la case &quot;master branch / docs folder&quot;.</li>
+<li>Naviguez jusqu'à l'url indiquée à <code>Votre site est publié à</code>.</li>
+</ol>
+<figure>
+  <img src="./img/mu-jam.15-1.png">
+  <br>
+  <img src="./img/mu-jam.15-2.png">
+  <figcaption>Fig. 15: Activate GitHub Pages.</figcaption>
+</figure>
+<p><strong>Congrats, your first website is online now !</strong></p>
+<h3 id="33-le-flux-de-travail-final">3.3 Le flux de travail final</h3>
+<p>J'aimerais vous montrer à quoi ressemble le travail sur votre site web à partir de maintenant. Nous allons revenir à notre éditeur de &quot;vscode&quot; et ...</p>
+<ol>
+<li>Ajouter un fichier <code>readme.md</code> (contenu ci-dessous) comme demandé et sauvegarder (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>).</li>
+</ol>
+<ul>
+<li>Un dépôt d'échantillons minimal pour <em>μjam</em>*</li>
+</ul>
+<ol start="2">
+<li>Modifiez à nouveau le contenu de <code>one.md</code> et sauvegardez (<kbd>Ctrl</kbd> + <kbd>S</kbd>).</li>
+<li>Saisissez un <em>message de confirmation</em> &quot;Add readme&quot;` (<kbd>Ctrl</kbd> + <kbd>Enter</kbd>).</li>
+<li>Dans une éventuelle fenêtre de message <code>vscode</code> à venir, <code>Voudriez-vous automatiquement ...</code> sélectionner <code>Toujours</code> .</li>
+<li>Dans la barre d'état, sélectionnez soit le petit &quot;nuage&quot;, soit le symbole &quot;flèche vers le haut&quot; pour télécharger les fichiers modifiés sur GitHub.</li>
+</ol>
+<figure>
+  <img src="./img/mu-jam.16-1.png">
+  <br>
+  <img src="./img/mu-jam.16-2.png">
+  <br>
+  <img src="./img/mu-jam.16-3.png">
+  <br>
+  <img src="./img/mu-jam.16-4.png">
+  <figcaption>Fig. 16: Workflow: Adding 'readme.md' and modifying 'one.md'.</figcaption>
+</figure>
+<p>C'est tout. Veuillez vérifier l'arrivée du fichier readme à Github et la bonne mise à jour de votre site web.</p>
+<p>Etapes <code>2-3-5</code> ci-dessus c'est-à-dire</p>
+<ul>
+<li>modifier le contenu</li>
+<li>type de message d'engagement</li>
+<li>téléchargement vers GitHub</li>
+</ul>
+<p>est tout ce que vous devez faire à partir de maintenant.</p>
+<p>Bonne question &amp;ndash ; merci &amp;ndash ; ce guide d'installation a en fait été rédigé par <strong>μjam</strong> &amp;ndash ; au cours d'un processus appelé <a href="https://en.wikipedia.org/wiki/Eating_your_own_dog_food"><em>dogfooding</em></a> <code> :)</code>.</p>
+<p><em>Happy publishing ...</em><br>
+<code>--</code><br>
+Stefan G.</p>
+<h2 id="references">References</h2>
+<p>[1] <a href="https://jamstack.wtf/">jamstack.wtf</a><br>
+[2] <a href="http://www.notyourdadsit.com/blog/2018/4/3/cheatsheet-setup-github-on-visual-studio-code">Not Your Dad's IT</a><br>
+[3] <a href="https://stackoverflow.com/questions/17308954/where-can-i-find-the-github-id-in-my-account/40695228">Where can I find the GitHub ID in my account?</a><br>
+[^4]: <a href="https://medium.com/@brygrill/version-control-basics-with-github-and-vs-code-1c1906cadd33">Version Control Basics with Github and VS Code</a><br>
+[5] <a href="https://azuredevopslabs.com/labs/azuredevops/github/">Version Controlling with Git in Visual Studio Code and GitHub</a><br>
+[6] <a href="https://machine-learning-blog.de/2019/10/03/versionskontrolle-mit-git-auf-einem-hoster-wie-github-gitlab-bitbucket-unter-visual-studio-code-einrichten/">Versionskontrolle mit Git auf einem Hoster wie GitHub, GitLab, BitBucket unter Visual Studio Code einrichten</a><br>
+[7] <a href="https://www.digitalocean.com/community/tutorials/git-integration-in-visual-studio-code">Git Integration in Visual Studio Code</a></p>
+
+  </article>
+</main>
+<footer>
+  <span class="left">&copy; Documentation</span>
+  <span class="center">powered by &mu;Jam &amp; VSCode &mdash; hosted by GitHub</span>
+  <span class="right" onclick="document.documentElement.className = document.documentElement.className === 'theme-dark' ? 'theme-light' : 'theme-dark';">&#9788;</span>
+</footer>
+</body>
+</html>

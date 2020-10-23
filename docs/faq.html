@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="${data.lang||'en'}" class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+<meta name="description" content="Cloning a `&mu;Jam` template">
+<meta name="date" content="Thu May 21 2020 02:00:00 GMT+0200 (Central European Summer Time)">
+<meta name="keywords" content="jamstack,static,serverless,web pages,markdown">
+<base href="undefined">
+<title>Cloning a microJam template</title>
+<link rel="shortcut icon" type="image/png" href="./img/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/vs2015.min.css">
+
+<link rel="stylesheet" href="./theme/styles.css">
+</head>
+<body id="top">
+<header>
+  <a class="left" href="./index.html"><img src="./img/icon128.png"></a>
+  <h1 class="center">&mu;Jam &ndash; Documentation</h1>
+  <a class="right" href="https://github.com/goessner/microjam"><img src="img/GitHub-Mark-Light-32px.png"></a>
+</header>
+<main>
+  <nav>
+     <h2 style="margin: 0.5em"><a href="#top">Documentation</a></h2>
+     <ul>
+<li>
+<p><a href="./index.html#introduction">Introduction</a></p>
+<ul>
+<li><a href="./index.html#quest-ce-que-cest">Qu'est-ce-que c'est ?</a></li>
+<li><a href="./index.html#que-puis-je-faire-avec-cela">Que puis-je faire avec cela ?</a></li>
+<li><a href="./index.html#je-ne-suis-pas-un-programmeur">Je ne suis pas un programmeur</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./installationGuide.html#installation">Installation</a></p>
+<ul>
+<li><a href="./installationGuide.html#crc3a9ation-de-pages-web-sans-serveur">Création de pages web sans serveur</a></li>
+<li><a href="./installationGuide.html#1-un-nouveau-projet">1. Un Nouveau Projet</a></li>
+<li><a href="./installationGuide.html#2-gc3a9nc3a9ration-de-contenu">2. Génération de contenu</a>
+<ul>
+<li><a href="./installationGuide.html#21-page-documents">2.1 <code>page</code> Documents</a></li>
+<li><a href="./installationGuide.html#22-documents-article">2.2 Documents <code>article</code></a></li>
+<li><a href="./installationGuide.html#23-index-document">2.3 <code>index</code> Document</a></li>
+</ul>
+</li>
+<li><a href="./installationGuide.html#3-publiez-dans-le-monde">3. Publiez dans le monde</a>
+<ul>
+<li><a href="./installationGuide.html#31-crc3a9ation-dun-dc3a9pot-local-git">3.1 Création d'un dépot local git</a></li>
+<li><a href="./installationGuide.html#32-dc3a9pc3b4t-repository-en-ligne">3.2 Dépôt (Repository) en ligne</a></li>
+<li><a href="./installationGuide.html#33-le-flux-de-travail-final">3.3 Le flux de travail final</a></li>
+</ul>
+</li>
+<li><a href="./installationGuide.html#references">References</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./cloning.html#cloning-templates">Cloning Templates</a></p>
+<ul>
+<li><a href="./cloning.html#prerequisites">Prerequisites</a></li>
+<li><a href="./cloning.html#clonage-dun-modc3a8le">Clonage d'un modèle</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./faq.html#faq">FAQ</a></p>
+<ul>
+<li><a href="./faq.html#pages">Pages</a></li>
+<li><a href="./faq.html#styles">Styles</a></li>
+<li><a href="./faq.html#templates">Templates</a></li>
+<li><a href="./faq.html#deployment">Deployment</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav>
+  <article>
+<h1 id="faq">FAQ <a class="plnk" href="#faq">#</a></h1>
+<h2 id="pages">Pages <a class="plnk" href="#pages">#</a></h2>
+<details><summary><b>Can we organize markdown files in subdirectories ?</b></summary>
+<p>Yes, starting with version 0.3.8 organization of markdown files in subdirectories <code>'docs/*.md'</code> with extension <code>'md'</code> under <code>'docs'</code> folder is possible. With that feature comes the requirement of having a single html <code>&lt;base&gt;</code> element pointing to the <code>'docs'</code> folder in template header sections.</p>
+</details>
+<h2 id="styles">Styles <a class="plnk" href="#styles">#</a></h2>
+<details><summary><b>Where are the style sheets ?</b></summary>
+<p>The CSS styles are defined in the file <code>/docs/theme/styles.css</code>. They are referenced by the templates in file <code>/docs/theme/template.js</code>.</p>
+</details>
+<details><summary><b>Can we change the styles ?</b></summary>
+<p>Yes. Change them in file <code>/docs/theme/styles.css</code> or rename it or use multiple CSS files. You only need to reference them from the templates in <code>/docs/theme/template.js</code>.</p>
+</details>
+<h2 id="templates">Templates <a class="plnk" href="#templates">#</a></h2>
+<details><summary><b>Where are the templates ?</b></summary>
+<p>The templates are defined in file <code>/docs/theme/template.js</code>. They are basically delivered by simple JavaScript functions returning <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">template literals</a>. Those recieve extended versions of the frontmatter metadata.</p>
+</details>
+<details><summary><b>Can we change the templates ?</b></summary>
+<p>Yes, of course. New themes are generated exactly by that. So go on and do it.</p>
+</details>
+<details><summary><b>Are other template engines supported ?</b></summary>
+<p>No sorry, it's due to <em>minimalism</em> paradigma.</p>
+</details>
+<h2 id="deployment">Deployment <a class="plnk" href="#deployment">#</a></h2>
+<details><summary><b>Is it possible to deploy to other hosting platforms ?</b></summary>
+<p>Yes, it should be easy in principle. Nothing done here yet.</p>
+</details>
+  </article>
+</main>
+<footer>
+  <span class="left">&copy; Documentation</span>
+  <span class="center">powered by &mu;Jam &amp; VSCode &mdash; hosted by GitHub</span>
+  <span class="right" onclick="document.documentElement.className = document.documentElement.className === 'theme-dark' ? 'theme-light' : 'theme-dark';">&#9788;</span>
+</footer>
+</body>
+</html>

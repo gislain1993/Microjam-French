@@ -1,0 +1,199 @@
+{
+	"name": "microjam",
+	"description": "Minimalistic JAMStack authoring and publishing environment",
+	"icon": "img/icon128.png",
+	"author": "Stefan Goessner",
+	"publisher": "goessner",
+	"version": "0.3.8",
+	"keywords": [
+		"JAMStack",
+		"deploy",
+		"static",
+		"serverless",
+		"github-pages",
+		"markdown",
+		"math",
+		"microjam"
+	],
+	"microjam": {},
+	"homepage": "https://github.com/goessner/microjam/blob/master/readme.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/goessner/microjam.git"
+	},
+	"bugs": {
+		"url": "https://github.com/goessner/microjam/issues"
+	},
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.45.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:markdown"
+	],
+	"contributes": {
+		"configuration": {
+			"title": "microjam",
+			"properties": {
+				"microjam.showSaveMessage": {
+					"type": "boolean",
+					"default": true,
+					"description": "Visibility of 'showInformationMessage' for display successful storage of 'html' file."
+				},
+				"microjam.markdownItPlugins": {
+					"type": "object",
+					"default": {},
+					"description": "markdown-it-plugins to install at initialization time."
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "extension.saveAsHtml",
+				"title": "microjam: save as Html",
+				"category": "Markdown",
+				"icon": "$(code)"
+			},
+			{
+				"command": "extension.rebuild",
+				"title": "microjam: rebuild All.",
+				"category": "Markdown",
+				"icon": "$(refresh)"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "extension.saveAsHtml",
+					"when": "resourceLangId == markdown && editorTextFocus",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.rebuild",
+					"when": "resourceLangId == markdown && editorTextFocus",
+					"group": "navigation"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "extension.saveAsHtml",
+					"when": "resourceLangId == markdown && editorTextFocus",
+					"group": "navigation",
+					"icon": "$(code)"
+				},
+				{
+					"command": "extension.rebuild",
+					"when": "resourceLangId == markdown && editorTextFocus",
+					"group": "navigation"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "extension.saveAsHtml",
+					"when": "resourceLangId == markdown",
+					"group": "navigation",
+					"icon": "$(code)"
+				},
+				{
+					"command": "extension.rebuild",
+					"when": "resourceLangId == markdown",
+					"group": "navigation"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "extension.saveAsHtml",
+					"when": "resourceLangId == markdown",
+					"group": "navigation"
+				},
+				{
+					"command": "extension.rebuild",
+					"when": "resourceLangId == markdown",
+					"group": "navigation"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"key": "ctrl+k h",
+				"command": "extension.saveAsHtml",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "ctrl+k a",
+				"command": "extension.rebuild",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "ctrl+k -",
+				"command": "editor.action.insertSnippet",
+				"when": "editorTextFocus",
+				"args": {
+					"snippet": "---\n\"layout\": \"$1\",\n\"title\": \"$TM_FILENAME_BASE\",\n\"date\": \"$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE\",\n\"description\": \"$3\",\n\"tags\": [$3]\n---\n$0"
+				}
+			},
+			{
+				"key": "ctrl+k t",
+				"command": "extension.insertToc",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "ctrl+k n",
+				"command": "extension.insertNav",
+				"when": "editorTextFocus"
+			}
+		],
+		"markdown.previewStyles": [
+			"./node_modules/katex/dist/katex.min.css",
+			"./node_modules/markdown-it-texmath/css/texmath.css",
+			"./css/previewstyle.css"
+		],
+		"markdown.markdownItPlugins": true,
+		"markdown.previewScripts": [
+			"scripts/g2.html.js",
+			"scripts/mec2.html.js"
+		],
+		"languages": [
+			{
+				"id": "source.microjam.math",
+				"extensions": [
+					"md"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"injectTo": [
+					"text.html.markdown"
+				],
+				"scopeName": "microjam.math",
+				"path": "./syntaxes/dollars.json"
+			}
+		]
+	},
+	"main": "./microjam",
+	"dependencies": {
+		"argparse": "^1.0.9",
+		"commander": "^2.20.3",
+		"entities": "^2.0.3",
+		"katex": "0.11.1",
+		"linkify-it": "^2.2.0",
+		"markdown-it": "^11.0.0",
+		"markdown-it-footnote": "^3.0.2",
+		"markdown-it-texmath": "^0.7.0",
+		"mdurl": "^1.0.1",
+		"uc.micro": "^1.0.6"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.45.0"
+	},
+	"__metadata": {
+		"id": "34fa3da6-f0e9-45c4-badd-3de753adcbb6",
+		"publisherDisplayName": "goessner",
+		"publisherId": "b49843a2-25e3-49f0-a037-519a07c3178d"
+	}
+}

@@ -1,0 +1,82 @@
+/* microJam style for vscode markdown preview */
+h1, h2, h3 {
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+/* read 'heading for'  */
+h4  {
+  font-weight: 400;
+  font-size: 0.95em;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+p { 
+  text-align: justify; 
+  hyphens: auto;
+}
+
+table {
+  display: table !important;
+  width: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important; 
+  border-collapse: collapse !important;
+}
+
+table th, table td {
+  border-left: none !important;
+  border-right: none !important;
+  border-top: 1px solid #000 !important;
+  border-bottom: 1px solid #000 !important;
+}
+
+img {
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+figure {
+  margin: 0.5em auto;
+}
+figure > * {
+  display: block;
+  margin: 0 auto;
+  page-break-inside: avoid;
+  text-align: center;
+}
+figcaption { 
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+aside {
+  font-size: 0.9em;
+  max-width: 33%;
+  padding: 0 0 0 1em;
+  margin: 0 0 0 1em;
+/*border-left: 3px solid #999;*/
+  float: right;
+}
+
+aside > *:first-child {
+  margin-top: 0;
+}
+aside > *:last-child {
+  margin-bottom: 0;
+}

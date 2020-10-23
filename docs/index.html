@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="${data.lang||'en'}" class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+<meta name="description" content="Cloning a `&mu;Jam` template">
+<meta name="date" content="Thu May 21 2020 02:00:00 GMT+0200 (Central European Summer Time)">
+<meta name="keywords" content="jamstack,static,serverless,web pages,markdown">
+<base href="undefined">
+<title>Index microJam</title>
+<link rel="shortcut icon" type="image/png" href="./img/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/vs2015.min.css">
+
+<link rel="stylesheet" href="./theme/styles.css">
+</head>
+<body id="top">
+<header>
+  <a class="left" href="./index.html"><img src="./img/icon128.png"></a>
+  <h1 class="center">&mu;Jam &ndash; Documentation</h1>
+  <a class="right" href="https://github.com/goessner/microjam"><img src="img/GitHub-Mark-Light-32px.png"></a>
+</header>
+<main>
+  <nav>
+     <h2 style="margin: 0.5em"><a href="#top">Documentation</a></h2>
+     <ul>
+<li>
+<p><a href="./index.html#introduction">Introduction</a></p>
+<ul>
+<li><a href="./index.html#quest-ce-que-cest">Qu'est-ce-que c'est ?</a></li>
+<li><a href="./index.html#que-puis-je-faire-avec-cela">Que puis-je faire avec cela ?</a></li>
+<li><a href="./index.html#je-ne-suis-pas-un-programmeur">Je ne suis pas un programmeur</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./installationGuide.html#installation">Installation</a></p>
+<ul>
+<li><a href="./installationGuide.html#crc3a9ation-de-pages-web-sans-serveur">Création de pages web sans serveur</a></li>
+<li><a href="./installationGuide.html#1-un-nouveau-projet">1. Un Nouveau Projet</a></li>
+<li><a href="./installationGuide.html#2-gc3a9nc3a9ration-de-contenu">2. Génération de contenu</a>
+<ul>
+<li><a href="./installationGuide.html#21-page-documents">2.1 <code>page</code> Documents</a></li>
+<li><a href="./installationGuide.html#22-documents-article">2.2 Documents <code>article</code></a></li>
+<li><a href="./installationGuide.html#23-index-document">2.3 <code>index</code> Document</a></li>
+</ul>
+</li>
+<li><a href="./installationGuide.html#3-publiez-dans-le-monde">3. Publiez dans le monde</a>
+<ul>
+<li><a href="./installationGuide.html#31-crc3a9ation-dun-dc3a9pot-local-git">3.1 Création d'un dépot local git</a></li>
+<li><a href="./installationGuide.html#32-dc3a9pc3b4t-repository-en-ligne">3.2 Dépôt (Repository) en ligne</a></li>
+<li><a href="./installationGuide.html#33-le-flux-de-travail-final">3.3 Le flux de travail final</a></li>
+</ul>
+</li>
+<li><a href="./installationGuide.html#references">References</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./cloning.html#cloning-templates">Cloning Templates</a></p>
+<ul>
+<li><a href="./cloning.html#prerequisites">Prerequisites</a></li>
+<li><a href="./cloning.html#clonage-dun-modc3a8le">Clonage d'un modèle</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./faq.html#faq">FAQ</a></p>
+<ul>
+<li><a href="./faq.html#pages">Pages</a></li>
+<li><a href="./faq.html#styles">Styles</a></li>
+<li><a href="./faq.html#templates">Templates</a></li>
+<li><a href="./faq.html#deployment">Deployment</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav>
+  <article>
+<h1 id="introduction">Introduction <a class="plnk" href="#introduction">#</a></h1>
+<h2 id="quest-ce-que-cest">Qu'est-ce-que c'est ? <a class="plnk" href="#quest-ce-que-cest">#</a></h2>
+<ul>
+<li>μ ... quoi ?</li>
+</ul>
+<p>La lettre grecque <code>'μ'</code> se pronoce <code>'my'</code> comme <code>micro</code> ou <code>'mee'</code> selon <a href="https://www.thoughtco.com/the-greek-alphabet-1705558">Grecque moderne</a> . Il suffit donc de l'appeler <em>'microjam'</em> ou <em>'myjam'</em>.</p>
+<ul>
+<li>ok ... myjam ?</li>
+</ul>
+<p>Ce <code>'Jam'</code> dans μJam vient de <code>Jamstack</code> et signifie une collection de trois (03) attributs:</p>
+<ul>
+<li><strong>J</strong> avaScript</li>
+<li><strong>A</strong> PI</li>
+<li><strong>M</strong> arkup</li>
+</ul>
+<p>Il s'agit principalement de la création de pages Web statiques ou de sites Web <em>sans serveur</em> vous voudrez peut etre <a href="https://jamstack.org/">lire plus</a> à propos de cette façon de construire des pages web légères <a href="https://jamstack.wtf/">here</a> et <a href="https://jamstack.email/">ici</a>.</p>
+<h2 id="que-puis-je-faire-avec-cela">Que puis-je faire avec cela ? <a class="plnk" href="#que-puis-je-faire-avec-cela">#</a></h2>
+<p>Si vous voulez</p>
+<ul>
+<li>Creer un petit à un moyen site web</li>
+<li>Ecrire le contenu de vos sites web. Pour cela il sera facile d apprende à utiliser <a href="https://commonmark.org/help/">Markdown language</a></li>
+<li>Publier votre page web dans votre  GitHub repository et <a href="https://pages.github.com/">pages GitHub</a></li>
+<li>Faire tout ceci dans votre éditeur gratuit <a href="https://code.visualstudio.com/"><em>Visual Studio Code</em></a> (<code>vscode</code>)</li>
+</ul>
+<p>Dès lors que l'approche minimaliste et puissante de μJam pourrais vous convaincre.</p>
+<h2 id="je-ne-suis-pas-un-programmeur">Je ne suis pas un programmeur <a class="plnk" href="#je-ne-suis-pas-un-programmeur">#</a></h2>
+<p>Vous n'avez pas besoin d'en être un... promis.</p>
+<p>Au début, vous devez installer le logiciel libre et gratuit <a href="https://code.visualstudio.com/">Visual Studio</a>. Il y a de fortes chances que vous l'ayez déjà. Mais vous pouvez aussi le faire plus tard.</p>
+<ul>
+<li>ok, comment puis-je essayer votre approche ... μjam ?</li>
+</ul>
+<p>il y a de fortes chances que vous ayez deja <a href="https://code.visualstudio.com/Download">installé</a> <code>vscode</code> editor.Vous pouvez également le faire plutard et lire d'abord ce qui concerne la création des pages web sur <a href="" data-href="">cet  exemple repository</a>
+Pas à pas par vous meme manuellement en trois (03) étapes simples:</p>
+<ol>
+<li>Un nouveau projet</li>
+<li>Générer le contenu</li>
+<li>Publier au monde</li>
+</ol>
+<p>Ainsi commencez avec le <a href="installationGuide.html">guide d'installation μjam </a> .</p>
+
+  </article>
+</main>
+<footer>
+  <span class="left">&copy; Documentation</span>
+  <span class="center">powered by &mu;Jam &amp; VSCode &mdash; hosted by GitHub</span>
+  <span class="right" onclick="document.documentElement.className = document.documentElement.className === 'theme-dark' ? 'theme-light' : 'theme-dark';">&#9788;</span>
+</footer>
+</body>
+</html>

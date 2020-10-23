@@ -1,0 +1,44 @@
+const tmpl = module.exports = {
+// article layout ... used by other templates
+page(data) {
+  return `<!doctype html>
+<html lang="\${data.lang||'en'}" class="theme-light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+<meta name="description" content="${data.description || (data.title + ' - microjam page')}">
+${data.date ? `<meta name="date" content="${new Date(data.date).toString()}">` : ''}
+${data.tags ? `<meta name="keywords" content="${data.tags.join()}">` : ''}
+<base href="${data.reldir}">
+<title>${data.title}</title>
+<link rel="shortcut icon" type="image/png" href="./img/favicon.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.1/styles/vs2015.min.css">
+${data.math ? `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.css">` : ''}
+<link rel="stylesheet" href="./theme/styles.css">
+</head>
+<body id="top">
+<header>
+  <a class="left" href="./index.html"><img src="./img/icon128.png"></a>
+  <h1 class="center">&mu;Jam &ndash; Documentation</h1>
+  <a class="right" href="https://github.com/goessner/microjam"><img src="img/GitHub-Mark-Light-32px.png"></a>
+</header>
+<main>
+  <nav>
+     <h2 style="margin: 0.5em"><a href="#top">Documentation</a></h2>
+     ${data.uses && data.uses.find((use) => use.uri === 'navigation.md').content || 'no navigation data !'}
+  </nav>
+  <article>
+${data.content}
+  </article>
+</main>
+<footer>
+  <span class="left">&copy; Documentation</span>
+  <span class="center">powered by &mu;Jam &amp; VSCode &mdash; hosted by GitHub</span>
+  <span class="right" onclick="document.documentElement.className = document.documentElement.className === 'theme-dark' ? 'theme-light' : 'theme-dark';">&#9788;</span>
+</footer>
+</body>
+</html>`
+}
+
+}
